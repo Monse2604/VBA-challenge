@@ -68,7 +68,7 @@ Sub AnalyzeStockData()
             ws.Cells(i + 1, 12).Value = results(i)(3)
         Next i
 
-        ' Format Quarterly Change as percentage and apply color formatting
+        ' Format for colors
         With ws.Range(ws.Cells(2, 10), ws.Cells(results.Count + 1, 10))
             .NumberFormat = "0.00%"
             For i = 2 To results.Count + 1
@@ -82,7 +82,7 @@ Sub AnalyzeStockData()
             Next i
         End With
         
-        ' Output best stocks
+        ' best stocks
         ws.Cells(1, 14).Value = "Greatest % Increase: " & bestIncreaseTicker & " (" & bestIncrease & "%)"
         ws.Cells(2, 14).Value = "Greatest % Decrease: " & bestDecreaseTicker & " (" & bestDecrease & "%)"
         ws.Cells(3, 14).Value = "Greatest Total Volume: " & bestVolumeTicker & " (" & bestVolume & ")"
